@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import { graphql, PageProps } from 'gatsby';
 import rssFeeds from '../utils/rssFeeds.json';
+import { Box, Link } from '@chakra-ui/react';
 
 type BlogPost = {
     title: string;
@@ -20,26 +21,30 @@ type DataProps = BlogData & SiteData;
 
 const BlogsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
     return (
-        <Layout pageTitle='Tech Blog Aggregator'>
-            {rssFeeds.map((rssFeed) => {
-                const siteName = rssFeed.name;
-                if (data[`feed${siteName}Meta`]) {
-                    return (
-                        <section key={siteName}>
-                            <h2>
-                                <a
+        <Layout>
+            <Box as='ul'>
+                {rssFeeds.map((rssFeed) => {
+                    const siteName = rssFeed.name;
+                    if (data[`feed${siteName}Meta`]) {
+                        return (
+                            <Box
+                                as='li'
+                                key={siteName}
+                                listStyleType={'none'}
+                                mb={4}
+                            >
+                                <Link
                                     href={data[`feed${siteName}Meta`].link}
-                                    target='_blank'
-                                    rel='noopener noreferrer'
+                                    isExternal
                                 >
                                     {data[`feed${siteName}Meta`].title}
-                                </a>
-                            </h2>
-                        </section>
-                    );
-                }
-                return null;
-            })}
+                                </Link>
+                            </Box>
+                        );
+                    }
+                    return null;
+                })}
+            </Box>
         </Layout>
     );
 };

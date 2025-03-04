@@ -13,6 +13,7 @@ const config: GatsbyConfig = {
                 name: feed.name,
             },
         })),
+        '@chakra-ui/gatsby-plugin',
     ],
 };
 
