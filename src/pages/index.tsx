@@ -2,10 +2,12 @@ import { graphql, PageProps } from 'gatsby';
 import React from 'react';
 import Layout from '../components/layout';
 import rssFeeds from '../utils/rssFeeds.json';
+import { Box, Heading, Link, List, ListItem } from '@chakra-ui/react';
 
 type BlogPost = {
     title: string;
     link: string;
+    pubDate?: string;
 };
 
 type BlogData = {
@@ -19,40 +21,50 @@ type SiteData = {
 type DataProps = BlogData & SiteData;
 
 const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
-    console.log(data);
-
     return (
-        <Layout pageTitle='Tech Blog Aggregator'>
+        <Layout>
             {rssFeeds.map((rssFeed) => {
                 const siteName = rssFeed.name;
                 if (data[`allFeed${siteName}`] && data[`feed${siteName}Meta`]) {
                     return (
-                        <section key={siteName}>
-                            <h2>
-                                <a
+                        <Box
+                            key={siteName}
+                            mb={8}
+                            borderBlockEnd={1}
+                            borderRadius='lg'
+                        >
+                            <Heading as='h2' size='md'>
+                                <Link
                                     href={data[`feed${siteName}Meta`].link}
-                                    target='_blank'
-                                    rel='noopener noreferrer'
+                                    isExternal
                                 >
                                     {data[`feed${siteName}Meta`].title}
-                                </a>
-                            </h2>
-                            <ul>
+                                </Link>
+                            </Heading>
+                            <List spacing={2} mt={2} p={0}>
                                 {data[`allFeed${siteName}`].nodes.map(
                                     (post, index) => (
-                                        <li key={index}>
-                                            <a
-                                                href={post.link}
-                                                target='_blank'
-                                                rel='noopener noreferrer'
-                                            >
-                                                {post.title}
-                                            </a>
-                                        </li>
+                                        <Box mb={6}>
+                                            {post.pubDate ? (
+                                                <Box fontSize='ms'>
+                                                    {new Date(
+                                                        post.pubDate
+                                                    ).toLocaleString()}
+                                                </Box>
+                                            ) : null}
+                                            <ListItem key={index}>
+                                                <Link
+                                                    href={post.link}
+                                                    isExternal
+                                                >
+                                                    {post.title}
+                                                </Link>
+                                            </ListItem>
+                                        </Box>
                                     )
                                 )}
-                            </ul>
-                        </section>
+                            </List>
+                        </Box>
                     );
                 }
                 return null;
@@ -73,6 +85,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedSakuraInternetMeta {
@@ -83,6 +96,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedHatenaMeta {
@@ -93,6 +107,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedGoogleMeta {
@@ -103,6 +118,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedDwangoMeta {
@@ -113,6 +129,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedMixiMeta {
@@ -123,16 +140,7 @@ export const query = graphql`
             nodes {
                 title
                 link
-            }
-        }
-        feedDeNAMeta {
-            link
-            title
-        }
-        allFeedDeNa {
-            nodes {
-                title
-                link
+                pubDate
             }
         }
         feedCyberAgentMeta {
@@ -143,6 +151,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedYumemiMeta {
@@ -153,6 +162,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedClassMethodMeta {
@@ -163,6 +173,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedMercariMeta {
@@ -173,6 +184,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedStudySapuriMeta {
@@ -183,6 +195,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedGunosyMeta {
@@ -193,6 +206,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedCookpadMeta {
@@ -203,6 +217,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedGurunaviMeta {
@@ -213,6 +228,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedDelyMeta {
@@ -223,6 +239,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedKLabMeta {
@@ -233,16 +250,7 @@ export const query = graphql`
             nodes {
                 title
                 link
-            }
-        }
-        feedZOZOMeta {
-            link
-            title
-        }
-        allFeedZOZO {
-            nodes {
-                title
-                link
+                pubDate
             }
         }
         feedMoneyForwardMeta {
@@ -253,6 +261,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedFreeeMeta {
@@ -263,6 +272,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedZaimMeta {
@@ -273,6 +283,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedWantedlyMeta {
@@ -283,6 +294,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedFindyMeta {
@@ -293,16 +305,7 @@ export const query = graphql`
             nodes {
                 title
                 link
-            }
-        }
-        feedSmartHRMeta {
-            link
-            title
-        }
-        allFeedSmartHR {
-            nodes {
-                title
-                link
+                pubDate
             }
         }
         feedKaonaviMeta {
@@ -313,6 +316,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
         feedSansanMeta {
@@ -323,6 +327,7 @@ export const query = graphql`
             nodes {
                 title
                 link
+                pubDate
             }
         }
     }
