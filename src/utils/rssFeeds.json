@@ -30,11 +30,6 @@
         "feed": "https://mixi-developers.mixi.co.jp/feed"
     },
     {
-        "name": "DeNA",
-        "site": "https://engineering.dena.com/blog/",
-        "feed": "https://engineering.dena.com/index.xml"
-    },
-    {
         "name": "CyberAgent",
         "site": "https://developers.cyberagent.co.jp/blog/",
         "feed": "https://developers.cyberagent.co.jp/blog/feed/"
@@ -85,11 +80,6 @@
         "feed": "https://www.klab.com/jp/assets/rss/rss_tech.xml"
     },
     {
-        "name": "ZOZO",
-        "site": "https://techblog.zozo.com/",
-        "feed": "https://techblog.zozo.com/rss"
-    },
-    {
         "name": "MoneyForward",
         "site": "https://moneyforward-dev.jp/",
         "feed": "https://moneyforward-dev.jp/rss"
@@ -113,11 +103,6 @@
         "name": "Findy",
         "site": "https://findy-code.io/engineer-lab/",
         "feed": "https://findy-code.io/engineer-lab/rss"
-    },
-    {
-        "name": "SmartHR",
-        "site": "https://tech.smarthr.jp/",
-        "feed": "https://tech.smarthr.jp/feed"
     },
     {
         "name": "Kaonavi",
