@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import rssFeeds from '../utils/rssFeeds.json';
 import { Box, Heading, Link, List, ListItem } from '@chakra-ui/react';
-
+// 型定義
 type BlogPost = {
     title: string;
     link: string;
