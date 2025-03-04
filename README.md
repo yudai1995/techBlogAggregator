@@ -1,3 +1,5 @@
+[デプロイサイトです](https://soft-kheer-8e0b97.netlify.app/)
+
 <p align="center">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
