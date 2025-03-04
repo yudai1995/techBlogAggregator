@@ -6,7 +6,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
         <Box>
             <Box as='header' px={6} py={4} color='blue.500'>
-                <Flex align='center' maxW='container.lg' mx='auto'>
+                <Flex align='center' maxW='container.lg'>
                     <Heading as='h1' size='lg'>
                         <Link to='/'>Tech Blog 一覧</Link>
                     </Heading>
