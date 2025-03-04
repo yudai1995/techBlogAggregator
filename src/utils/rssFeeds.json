@@ -1,0 +1,132 @@
+[
+    {
+        "name": "LineYahoo",
+        "site": "https://techblog.lycorp.co.jp/ja",
+        "feed": "https://techblog.lycorp.co.jp/ja/feed/index.xml"
+    },
+    {
+        "name": "SakuraInternet",
+        "site": "https://knowledge.sakura.ad.jp/",
+        "feed": "https://knowledge.sakura.ad.jp/feed/"
+    },
+    {
+        "name": "Hatena",
+        "site": "https://developer.hatenastaff.com/",
+        "feed": "https://developer.hatenastaff.com/rss"
+    },
+    {
+        "name": "Google",
+        "site": "https://developers-jp.googleblog.com/",
+        "feed": "https://developers-jp.googleblog.com/atom.xml"
+    },
+    {
+        "name": "Dwango",
+        "site": "https://dwango.github.io/",
+        "feed": "https://dwango.github.io/index.xml"
+    },
+    {
+        "name": "Mixi",
+        "site": "https://mixi-developers.mixi.co.jp/",
+        "feed": "https://mixi-developers.mixi.co.jp/feed"
+    },
+    {
+        "name": "DeNA",
+        "site": "https://engineering.dena.com/blog/",
+        "feed": "https://engineering.dena.com/index.xml"
+    },
+    {
+        "name": "CyberAgent",
+        "site": "https://developers.cyberagent.co.jp/blog/",
+        "feed": "https://developers.cyberagent.co.jp/blog/feed/"
+    },
+    {
+        "name": "Yumemi",
+        "site": "https://zenn.dev/p/yumemi_inc",
+        "feed": "https://zenn.dev/p/yumemi_inc/feed"
+    },
+    {
+        "name": "ClassMethod",
+        "site": "https://dev.classmethod.jp/",
+        "feed": "https://dev.classmethod.jp/feed/"
+    },
+    {
+        "name": "Mercari",
+        "site": "https://engineering.mercari.com/blog/",
+        "feed": "https://engineering.mercari.com/blog/feed.xml"
+    },
+    {
+        "name": "StudySapuri",
+        "site": "https://blog.studysapuri.jp/",
+        "feed": "https://blog.studysapuri.jp/rss"
+    },
+    {
+        "name": "Gunosy",
+        "site": "https://tech.gunosy.io/",
+        "feed": "https://tech.gunosy.io/rss"
+    },
+    {
+        "name": "Cookpad",
+        "site": "https://techlife.cookpad.com/",
+        "feed": "https://techlife.cookpad.com/feed"
+    },
+    {
+        "name": "Gurunavi",
+        "site": "https://developers.gnavi.co.jp/",
+        "feed": "https://developers.gnavi.co.jp/rss"
+    },
+    {
+        "name": "Dely",
+        "site": "https://tech.dely.jp/",
+        "feed": "https://tech.dely.jp/rss"
+    },
+    {
+        "name": "KLab",
+        "site": "https://www.klab.com/jp/blog/tech/",
+        "feed": "https://www.klab.com/jp/assets/rss/rss_tech.xml"
+    },
+    {
+        "name": "ZOZO",
+        "site": "https://techblog.zozo.com/",
+        "feed": "https://techblog.zozo.com/rss"
+    },
+    {
+        "name": "MoneyForward",
+        "site": "https://moneyforward-dev.jp/",
+        "feed": "https://moneyforward-dev.jp/rss"
+    },
+    {
+        "name": "Freee",
+        "site": "https://developers.freee.co.jp/",
+        "feed": "https://developers.freee.co.jp/rss"
+    },
+    {
+        "name": "Zaim",
+        "site": "https://blog.zaim.co.jp/",
+        "feed": "https://blog.zaim.co.jp/rss"
+    },
+    {
+        "name": "Wantedly",
+        "site": "https://www.wantedly.com/stories/s/wantedly_engineers",
+        "feed": "https://www.wantedly.com/stories/s/wantedly_engineers/rss.xml"
+    },
+    {
+        "name": "Findy",
+        "site": "https://findy-code.io/engineer-lab/",
+        "feed": "https://findy-code.io/engineer-lab/rss"
+    },
+    {
+        "name": "SmartHR",
+        "site": "https://tech.smarthr.jp/",
+        "feed": "https://tech.smarthr.jp/feed"
+    },
+    {
+        "name": "Kaonavi",
+        "site": "https://note.com/kaonavi_devs",
+        "feed": "https://note.com/kaonavi_devs/rss"
+    },
+    {
+        "name": "Sansan",
+        "site": "https://buildersbox.corp-sansan.com/",
+        "feed": "https://buildersbox.corp-sansan.com/rss"
+    }
+]
