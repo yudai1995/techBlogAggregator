@@ -26,6 +26,9 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
             {rssFeeds.map((rssFeed) => {
                 const siteName = rssFeed.name;
                 if (data[`allFeed${siteName}`] && data[`feed${siteName}Meta`]) {
+                    const meta = data[`feed${siteName}Meta`];
+                    const posts = data[`allFeed${siteName}`].nodes;
+
                     return (
                         <Box
                             key={siteName}
@@ -34,35 +37,27 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                             borderRadius='lg'
                         >
                             <Heading as='h2' size='md'>
-                                <Link
-                                    href={data[`feed${siteName}Meta`].link}
-                                    isExternal
-                                >
-                                    {data[`feed${siteName}Meta`].title}
+                                <Link href={meta.link} isExternal>
+                                    {meta.title}
                                 </Link>
                             </Heading>
                             <List spacing={2} mt={2} p={0}>
-                                {data[`allFeed${siteName}`].nodes.map(
-                                    (post, index) => (
-                                        <Box mb={6}>
-                                            {post.pubDate ? (
-                                                <Box fontSize='ms'>
-                                                    {new Date(
-                                                        post.pubDate
-                                                    ).toLocaleString()}
-                                                </Box>
-                                            ) : null}
-                                            <ListItem key={index}>
-                                                <Link
-                                                    href={post.link}
-                                                    isExternal
-                                                >
-                                                    {post.title}
-                                                </Link>
-                                            </ListItem>
-                                        </Box>
-                                    )
-                                )}
+                                {posts.map((post, index) => (
+                                    <Box mb={6}>
+                                        {post.pubDate ? (
+                                            <Box fontSize='ms'>
+                                                {new Date(
+                                                    post.pubDate
+                                                ).toLocaleString()}
+                                            </Box>
+                                        ) : null}
+                                        <ListItem key={index}>
+                                            <Link href={post.link} isExternal>
+                                                {post.title}
+                                            </Link>
+                                        </ListItem>
+                                    </Box>
+                                ))}
                             </List>
                         </Box>
                     );
@@ -75,6 +70,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
 
 export default IndexPage;
 
+// TODO: クエリをまとめる
 export const query = graphql`
     query {
         feedLineYahooMeta {
